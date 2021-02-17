@@ -5,11 +5,10 @@ const router = require("express").Router();
 const timeslotController = require("../controllers/timeslot");
 
 //Middleware
-const timeslotMiddleware = require("../middlewares/content");
+const timeslotMiddleware = require("../middlewares/timeslot");
 
 //Routes
 router.get("/serviceType/:serviceTypeId/timeslot", timeslotController.browse);
-router.get("/timeslot/:id", timeslotController.read);
 router.post(
   "/serviceType/:serviceTypeId/timeslot",
   timeslotMiddleware.add,

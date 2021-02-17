@@ -4,28 +4,6 @@ const userService = require("../services/user");
 
 //Modules exports
 module.exports = {
-  browse: async (req, res) => {
-    const { page = 1 } = req.query;
-    try {
-      const user = await userService.find(page);
-
-      //get total documents
-      const pageInfo = await userService.getPagination(page);
-      res.status(200).send({ data: user, ...pageInfo });
-    } catch (err) {
-      res.status(400).json({ error: err.message });
-    }
-  },
-  read: async (req, res) => {
-    try {
-      const { id } = req.params;
-      const user = await userService.findId(id);
-
-      res.status(200).send({ data: user });
-    } catch (err) {
-      res.status(400).json({ error: err.message });
-    }
-  },
   edit: async (req, res) => {
     try {
       const { firstname, lastname, email, password } = req;

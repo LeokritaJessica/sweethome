@@ -7,6 +7,8 @@ const projectTypeRoutes = require("./projectType");
 const serviceTypeRoutes = require("./serviceType");
 const showcaseTypeRoutes = require("./showcaseType");
 const timeslotRoutes = require("./timeslot");
+const customerRoutes = require("./customer");
+const appointmentRoutes = require("./appointment.js")
 
 //Module exports
 module.exports = {
@@ -18,4 +20,6 @@ module.exports = {
   serviceTypeRoutes,
   showcaseTypeRoutes,
   timeslotRoutes,
+  customerRoutes,
+  appointmentRoutes
 };

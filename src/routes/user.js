@@ -8,8 +8,6 @@ const userController = require("../controllers/user");
 const authMiddleware = require("../middlewares/auth");
 
 //Routes
-router.get("/users", userController.browse);
-router.get("/user/:id", userController.read);
 router.put("/user/:id", userController.edit);
 router.delete("/user/:id", userController.delete);
 

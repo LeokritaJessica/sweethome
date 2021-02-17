@@ -34,10 +34,13 @@ app.use("/api/v1/admin", adminRoutes.projectTypeRoutes);
 app.use("/api/v1/admin", adminRoutes.serviceTypeRoutes);
 app.use("/api/v1/admin", adminRoutes.showcaseTypeRoutes);
 app.use("/api/v1/admin", adminRoutes.timeslotRoutes);
+app.use("/api/v1/admin", adminRoutes.customerRoutes);
+app.use("/api/v1/admin", adminRoutes.appointmentRoutes);
 
 //User
 app.use("/api/v1", routes.usersRoutes);
 app.use("/api/v1", routes.authRoutes);
+app.use("/api/v1", routes.appointmentRoutes);
 
 //Module Exports
 module.exports = app;

@@ -7,7 +7,7 @@ const appointmentSchema = new Schema(
   {
     ticket: {
       type: String,
-      default: "#00001",
+      default: "#000011",
       unique: true,
       minlength: 3,
       maxlength: 8,
@@ -49,10 +49,6 @@ const appointmentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "serviceType",
     },
-    durationType: {
-      type: Schema.Types.ObjectId,
-      ref: "durationType",
-    },
     locations: [
       {
         type: Schema.Types.ObjectId,
@@ -62,7 +58,7 @@ const appointmentSchema = new Schema(
     styles: [
       {
         type: Schema.Types.ObjectId,
-        ref: "styles",
+        ref: "style",
       },
     ],
     user: {

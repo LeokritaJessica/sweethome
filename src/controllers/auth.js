@@ -27,6 +27,8 @@ module.exports = {
       };
       const token = jwt.sign(payload, SECRET_KEY_TOKEN, { expiresIn: "1800s" });
 
+      isEmailValid.activity = new Date()
+      await isEmailValid.save()
       res.status(200).send({ info: "LOGIN", data: { token } });
     } catch (err) {
       res.status(400).json(err.message);

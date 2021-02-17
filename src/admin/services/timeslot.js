@@ -5,7 +5,7 @@ const { serviceTypeModel, timeslotModel } = require("../../models");
 module.exports = {
   find: async (serviceTypeId, page, limit) => {
     return await timeslotModel
-      .findById(serviceTypeId)
+      .find({ serviceType: serviceTypeId })
       .limit(limit)
       .skip((page - 1) * limit)
       .exec();
@@ -23,13 +23,13 @@ module.exports = {
     return await timeslot.save();
   },
   edit: async (id, timeslotData) => {
-    return timeslotModel.findByIdAndUpdate(id, timeslotData);
+    return timeslotModel.findByIdAndUpdate(id, timeslotData, { new: true });
   },
   delete: async (id) => {
     return timeslotModel.findByIdAndRemove(id);
   },
   getPagination: async (page, limit) => {
-    const totalItem = await serviceTypeModel.countDocuments();
+    const totalItem = await timeslotModel.countDocuments();
     const activePage = page;
     const totalPage = Math.ceil(totalItem / limit);
 

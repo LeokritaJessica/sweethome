@@ -7,7 +7,7 @@ const userSchema = new Schema(
   {
     photo: {
       type: String,
-      default: 'none',
+      default: "none",
     },
     firstname: {
       type: String,
@@ -38,15 +38,25 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      default: 'none',
+      default: "none",
       minlength: 3,
       maxlength: 255,
     },
     address: {
       type: String,
-      default: 'none',
+      default: "none",
       minlength: 3,
       maxlength: 255,
+    },
+    appointments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "appointment",
+      },
+    ],
+    activity: {
+      type: Date,
+      default: Date.now,
     },
     createdAt: {
       type: Date,
